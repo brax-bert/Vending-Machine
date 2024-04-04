@@ -61,7 +61,7 @@ public class VendingMachineCLI {
                     makeSelection();
                     break;
                 case "3":
-                    //call finishTransaction();
+                    handler.finishTransaction();
                     break;
                 default :
                     System.out.println("Not a valid entry. Please try again");
@@ -102,7 +102,11 @@ public class VendingMachineCLI {
         } else {
             for(Item item: inventory.getItems()) {
                 if(selection.equals(item.location) && item.qty == 0) {
-                    System.out.println(item.name + " is SOLD OUT");
+                    System.out.println(item.name + " is SOLD OUT"); }
+                if(selection.equals(item.location) ) {
+                    inventory.dispenseItem(item, handler);
+
+
                 }
             }
 

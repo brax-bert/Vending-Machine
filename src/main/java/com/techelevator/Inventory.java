@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.logging.Handler;
 
 public class Inventory {
     private final List<Item> inventory = new ArrayList<>();
@@ -67,5 +68,17 @@ public class Inventory {
         }
         return false;
     }
+
+   public void dispenseItem(Item item, TransactionHandler handler) {
+      if (handler.haveEnoughMoney(item.price)) {
+          handler.payForItem(item.price);
+          System.out.println(item.name + item.price + item.message + handler.getBalance());
+      }
+      else {
+          System.out.println("You do not have enough money for this transaction");
+      }
+
+   }
+
 
 }
