@@ -45,16 +45,13 @@ public class Inventory {
                         break;
                 }
                 this.inventory.add(item);
-
             }
-
         }catch (IOException e){
             System.out.println("Error reading file");
 
         } catch (Exception e) {
             System.out.println("An error has occurred");
         }
-
     }
     public List<Item> getItems() {
         return inventory;
@@ -79,8 +76,5 @@ public class Inventory {
       else {
           System.out.println("You do not have enough money for this transaction");
       }
-
    }
-
-
 }

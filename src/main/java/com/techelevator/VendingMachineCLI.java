@@ -107,15 +107,6 @@ public class VendingMachineCLI {
                     inventory.dispenseItem(item, handler);
                 }
             }
-
         }
-
-//        Show the list of products available and allow the customer to enter a code to select an item.
-//        If the product code doesn't exist, the vending machine informs the customer and returns them to the Purchase menu.
-//        If a product is currently sold out, the vending machine informs the customer and returns them to the Purchase menu.
-//        If a customer selects a valid product, it's dispensed to the customer.
-//        Dispensing an item prints the item name, cost, and the money remaining. Dispensing also returns a message.
-//        After the machine dispenses the product, the machine must update its balance accordingly and return the customer to the Purchase menu.
-
     }
 }

@@ -78,5 +78,15 @@ public class UnitTest1 {
 
 		assertEquals(expected, actual);
 	}
+	@Test
+	public void testHaveEnoughMoneyFalse() {
+		TransactionHandler handler = new TransactionHandler();
+		BigDecimal price = new BigDecimal(4.00);
+		handler.add1();
+		boolean expected = false;
+		boolean actual = handler.haveEnoughMoney(price);
+
+		assertEquals(expected, actual);
+	}
 
 }
