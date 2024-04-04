@@ -36,16 +36,16 @@ public class TransactionHandler {
 
     public void finishTransaction() {
         BigDecimal quarter = new BigDecimal(".25");
+        BigDecimal dime = new BigDecimal(".10");
+        BigDecimal nickel = new BigDecimal(".05");
+
         BigDecimal numOfQuarters = balance.divideToIntegralValue(quarter);
         balance = balance.subtract(numOfQuarters.multiply(quarter));
-        BigDecimal dime = new BigDecimal(".1");
         BigDecimal numOfDimes = balance.divideToIntegralValue(dime);
-        balance = balance.subtract(numOfQuarters.multiply(dime));
-        BigDecimal nickel = new BigDecimal(".05");
+        balance = balance.subtract(numOfDimes.multiply(dime));
         BigDecimal numOfNickels = balance.divideToIntegralValue(nickel);
-        balance = balance.subtract(numOfQuarters.multiply(nickel));
-        System.out.println("Your Change is" + numOfQuarters.intValue() +"Quarters" + numOfDimes.intValue() + "Dimes" + numOfNickels.intValue() + "Nickels");
+        balance = balance.subtract(numOfNickels.multiply(nickel));
+
+        System.out.println("Your Change is " + numOfQuarters.intValue() +" Quarters, " + numOfDimes.intValue() + " Dimes, and " + numOfNickels.intValue() + " Nickels.");
     }
-
-
 }

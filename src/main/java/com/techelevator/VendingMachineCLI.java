@@ -47,7 +47,7 @@ public class VendingMachineCLI {
 
     public void purchaseMenu() {
         while (true) {
-            System.out.println("Current Money Provided: $" + handler.getBalance());
+            System.out.println("Your Current Balance is $" + handler.getBalance());
             System.out.println("(1) Feed Money");
             System.out.println("(2) Select Product");
             System.out.println("(3) Finish Transaction");
@@ -71,7 +71,7 @@ public class VendingMachineCLI {
     }
 
     public void feedMoney() {
-        System.out.println("Current Money Provided: $" + handler.getBalance());
+        System.out.println("Your Current Balance is $" + handler.getBalance());
         System.out.println("(1) Add $1.00");
         System.out.println("(2) Add $5.00");
         System.out.println("(3) Add $10.00");
@@ -102,11 +102,9 @@ public class VendingMachineCLI {
         } else {
             for(Item item: inventory.getItems()) {
                 if(selection.equals(item.location) && item.qty == 0) {
-                    System.out.println(item.name + " is SOLD OUT"); }
-                if(selection.equals(item.location) ) {
+                    System.out.println(item.name + " is SOLD OUT");
+                }else if(selection.equals(item.location) ) {
                     inventory.dispenseItem(item, handler);
-
-
                 }
             }
 

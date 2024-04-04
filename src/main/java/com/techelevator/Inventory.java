@@ -72,7 +72,10 @@ public class Inventory {
    public void dispenseItem(Item item, TransactionHandler handler) {
       if (handler.haveEnoughMoney(item.price)) {
           handler.payForItem(item.price);
-          System.out.println(item.name + item.price + item.message + handler.getBalance());
+          item.qty--;
+          System.out.println(item.name + " " + item.price);
+          System.out.println(item.message);
+          System.out.println("**********************************");
       }
       else {
           System.out.println("You do not have enough money for this transaction");
