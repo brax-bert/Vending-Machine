@@ -59,5 +59,13 @@ public class Inventory {
 
         return inventory;
     }
+    public boolean isValidSelection(String selection) {
+        for(Item item: inventory) {
+            if(selection.equals(item.location)){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
