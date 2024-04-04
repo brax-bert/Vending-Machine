@@ -57,7 +57,6 @@ public class Inventory {
 
     }
     public List<Item> getItems() {
-
         return inventory;
     }
     public boolean isValidSelection(String selection) {
