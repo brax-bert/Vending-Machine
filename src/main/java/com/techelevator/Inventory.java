@@ -69,16 +69,16 @@ public class Inventory {
     }
 
    public void dispenseItem(Item item, TransactionHandler handler) {
-      if (handler.haveEnoughMoney(item.price)) {
-          handler.payForItem(item.price);
-          item.qty--;
-          System.out.println(item.name + " " + item.price);
-          System.out.println(item.message);
-          System.out.println("**********************************");
-
-      }
-      else {
-          System.out.println("You do not have enough money for this transaction");
-      }
+        if (handler.haveEnoughMoney(item.price)) {
+            handler.payForItem(item.price);
+            item.qty--;
+            System.out.println(item.name + " " + item.price);
+            System.out.println(item.message);
+            System.out.println("**********************************");
+            logger.logDispenseItem(item, handler.getBalance());
+        }
+        else {
+            System.out.println("You do not have enough money for this transaction");
+        }
    }
 }
