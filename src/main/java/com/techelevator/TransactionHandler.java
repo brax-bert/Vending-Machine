@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public class TransactionHandler {
     private BigDecimal balance = new BigDecimal(0);
+    PurchaseLogger logger;
+
+    public TransactionHandler(PurchaseLogger logger){
+        this.logger = logger;
+    }
 
     public BigDecimal getBalance() {
         return balance;

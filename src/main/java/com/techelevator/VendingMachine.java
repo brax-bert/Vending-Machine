@@ -16,8 +16,9 @@ public class VendingMachine {
 			System.out.println(e.getMessage());
 		}
 		PurchaseLogger logger = new PurchaseLogger(log);
-		Inventory inv = new Inventory();
-		VendingMachineCLI ui = new VendingMachineCLI(inv);
+		Inventory inv = new Inventory(logger);
+		TransactionHandler handler = new TransactionHandler(logger);
+		VendingMachineCLI ui = new VendingMachineCLI(inv, handler);
 		ui.mainMenu();
 	}
 }

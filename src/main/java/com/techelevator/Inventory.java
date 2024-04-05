@@ -11,7 +11,10 @@ public class Inventory {
 
     File file = new File("vendingmachine.csv");
 
-    public Inventory() {
+    PurchaseLogger logger;
+
+    public Inventory(PurchaseLogger logger) {
+        this.logger = logger;
 
         try {
             Scanner fileScanner = new Scanner(file);
@@ -72,6 +75,7 @@ public class Inventory {
           System.out.println(item.name + " " + item.price);
           System.out.println(item.message);
           System.out.println("**********************************");
+
       }
       else {
           System.out.println("You do not have enough money for this transaction");

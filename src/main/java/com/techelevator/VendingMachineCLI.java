@@ -5,9 +5,10 @@ import java.util.*;
 public class VendingMachineCLI {
     Inventory inventory;
     Scanner inputScanner = new Scanner(System.in);
-    TransactionHandler handler = new TransactionHandler();
-    VendingMachineCLI(Inventory inventory){
+    TransactionHandler handler;
+    VendingMachineCLI(Inventory inventory, TransactionHandler handler){
         this.inventory = inventory;
+        this.handler = handler;
     }
     public void mainMenu() {
         while (true) {
