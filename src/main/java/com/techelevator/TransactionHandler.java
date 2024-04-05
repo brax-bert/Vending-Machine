@@ -30,7 +30,6 @@ public class TransactionHandler {
     }
     public void payForItem(BigDecimal price) {
         this.balance = this.balance.subtract(price);
-
     }
 
     public boolean haveEnoughMoney(BigDecimal price) {

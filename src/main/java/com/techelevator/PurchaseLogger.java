@@ -24,7 +24,7 @@ public class PurchaseLogger {
         String now = getDateAndTime();
         now += " FEED MONEY: $" + amount + " $" + balance;
         try(PrintWriter writer = new PrintWriter(new FileOutputStream(file, true))){
-
+            writer.println(now);
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -34,7 +34,7 @@ public class PurchaseLogger {
         String now = getDateAndTime();
         now += " GIVE CHANGE: $" + amount + " $" + balance;
         try(PrintWriter writer = new PrintWriter(new FileOutputStream(file, true))){
-
+            writer.println(now);
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -43,7 +43,7 @@ public class PurchaseLogger {
         String now = getDateAndTime();
         now += " " + item.name + " " + item.location + " $" + balance;
         try(PrintWriter writer = new PrintWriter(new FileOutputStream(file, true))){
-
+            writer.println(now);
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
